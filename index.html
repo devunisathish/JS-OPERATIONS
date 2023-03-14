@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>JS Operations | Sathish</title>
+</head>
+<body>
+    <h1>JS Operations | Sathish</h1>
+    <table class="container">
+    <!-- Declaration of variables using different data types -->
+    <tr class="input-container">
+    <th><label class="label" for="num1">Enter a Number:</label></th>
+    <th><input class="text-input" type="number" id="num1"></th>
+    </tr>
+
+    <tr class="input-container">
+    <th><label class="label " for="str1">Enter a String:</label></th>
+    <th><input class="text-input" type="text" id="str1"></th>
+    </tr>
+
+    <tr class="input-container">
+    <th><label class="label" for="bool1">Enter Boolean value<br>(True or False):</label></th>
+    <th><input  class="text-input" type="text" id="bool1"></th>
+    </tr>
+
+    <tr class="input-container">
+    <th><button style="--clr:#8A2BE2" onclick="declareVariables()"><span>Variables</span><i></i></button></th>
+    <th><p class="p" id="result1" style="font-family: Raleway, sans-serif;">Variables Results </p></th>
+    </tr>
+
+<!-- Use of operators to perform arithmetic operations -->
+    <tr class="input-container">
+    <th><label class="label" for="num2">Enter First Number:</label></th>
+    <th><input class="text-input" type="number" id="num2"></th>
+    </tr>
+    <tr class="input-container">
+    <th><label class="label" for="num3">Enter Second Number:</label></th>
+    <th><input class="text-input" type="number" id="num3"></th>
+    </tr>
+    <tr class="input-container">
+    <th><button style="--clr:#0FF0FC" onclick="performArithmetic()"><span>Arithmetic</span><i></i></button></th>
+    <th><p class="p" id="result2">Arithmetic Results </p></th>
+    </tr>
+<!-- Use of operators to perform comparison and logical operations -->
+    <tr class="input-container">
+    <th><label class="label" for="num4">Enter First Number:</label></th>
+    <th><input class="text-input" type="number" id="num4"></th>
+    </tr>
+    <tr class="input-container">
+    <th><label class="label" for="num5">Enter Second Number:</label></th>
+    <th><input class="text-input" type="number" id="num5"></th>
+    </tr>
+    <tr class="input-container">
+    <th><button style="--clr:#FF44CC" onclick="performComparison()"><span>Comparison</span><i></i></button></th>
+    <th><p id="result3">Comparison Results </p></th>
+    </tr>
+<!-- Displaying the result of the operations on the web page -->
+
+    </table>
+    <script>
+	// Declaration of variables using different data types
+	function declareVariables() {
+		var num1 = document.getElementById("num1").value;
+		var str1 = document.getElementById("str1").value;
+		var bool1 = document.getElementById("bool1").value;
+
+		document.getElementById("result1").innerHTML = "Number is: " + num1 + " <br>String is: " + str1 + " <br>Boolean is: " + bool1;
+	}
+
+	// Use of operators to perform arithmetic operations
+	function performArithmetic() {
+		var num2 = document.getElementById("num2").value;
+		var num3 = document.getElementById("num3").value;
+
+		var addition = Number(num2) + Number(num3);
+		var subtraction = num2 - num3;
+		var multiplication = num2 * num3;
+		var division = num2 / num3;
+		var remainder = num2 % num3;
+
+		document.getElementById("result2").innerHTML = "Addition: " + addition + "<br>Subtraction: " + subtraction + "<br>Multiplication: " + multiplication + "<br>Division: " + division + "<br>Remainder: " + remainder;
+	}
+
+	// Use of operators to perform comparison and logical operations
+	function performComparison() {
+		var num4 = document.getElementById("num4").value;
+		var num5 = document.getElementById("num5").value;
+
+		var isEqual = num4 == num5;
+		var isNotEqual = num4 != num5;
+		var isGreater = num4 > num5;
+		var isLess = num4 < num5;
+		var isGreaterOrEqual = num4 >= num5;
+		var isLessOrEqual = num4 <= num5;
+		var andOperator = (num4 < 10 && num5 < 10);
+		var orOperator = (num4 < 10 || num5 < 10);
+		var notOperator = !(num4 == num5);
+
+		document.getElementById("result3").innerHTML = "Is equal: " + isEqual+ "<br>IsNotEqual: " + isNotEqual + "<br>IsGreater: " + isGreater + "<br>IsLess: " + isLess + "<br>IsGreaterOrEqual: " + isGreaterOrEqual + "<br>isLessOrEqual: " + isLessOrEqual + "<br>AndOPerator: " + andOperator + "<br>OrOperator: " + orOperator + "<br>NotOperator: " + notOperator ;
+    }
+    </script>
+</body>
+</html>
